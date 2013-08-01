@@ -2,16 +2,17 @@ Rotten-Tomatoes-API-CodeIgniter-Library
 =======================================
 Rotten Tomatoes Movie Database API CodeIgniter Library
 
-by Jake Monton - <montonjake89@gmail.com>
+contributors
 ======================================
-A basic Rotten Tomatoes API CodeIgniter Library wrapper.
+created by by Jake Monton - <montonjake89@gmail.com>
+forked and made even better by Håkan Nylén (Confact) <hakan@dun.se>
 
 /**
  * Rotten tomatoes v1.0 
  * PHP class - wrapper to Rotten Tomatoes v1.0 API
  * API Documentation - http://developer.rottentomatoes.com/docs
  * 
- * @author ekaj_03 <montonjake89@gmail.com>
+ * @author ekaj_03 <montonjake89@gmail.com>, confact <hakan@dun.se>
  * @copyright 2012 ekaj_03
  * @date 2012-09-11
  * @link https://github.com/ekaj03/Rotten-Tomatoes-API-CodeIgniter-Library
