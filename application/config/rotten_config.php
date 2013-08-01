@@ -11,7 +11,7 @@
 |
 */
 
-$config['rotten_api_key'] = 'YOUR_API_KEY';
-
+$config['rotten_api_key'] = 'a39z6cxbh24495ftkavnfwg6';
+$config['rotten_format'] = "json";
 /* End of file rotten_config.php */
 /* Location: ./application/config/rotten_config.php */

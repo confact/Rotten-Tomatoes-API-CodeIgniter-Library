@@ -22,15 +22,14 @@
 	private $_apikey;   /* the API key */
 
 	
-	function __construct($data){
-		
-		if(empty($data['api_key'])){
-			exit('API Key is required to use this library. Please register <a target="_blank" href="http://developer.rottentomatoes.com/member/register">here</a> to get your API key.');
-		}
+	function __construct(){
+        $this->_obj =& get_instance();
+        $this->_obj->load->config('rotten_config');
+
 		/* Set API Key */
-		$this->setApiKey($data['api_key']);
+		$this->setApiKey($this->config->item('rotten_api_key'));
 		/* Set return format */
-		$this->setFormat($data['format']);
+		$this->setFormat($this->config->item('rotten_format'));
 	}
 	
 	/**
@@ -70,7 +69,7 @@
 	 * @param int $page
 	 */
 	public function searchMovie($keyword, $limit, $page){
-		$add_uri = 'q='.$keyword.'&page_limit='.$limit.'&page='.$page;
+		$add_uri = 'q='.urlencode($keyword).'&page_limit='.$limit.'&page='.$page;
 		return $this->_call('movies', $add_uri);
 	}
 	
@@ -89,6 +88,11 @@
 	public function getMovieClips($movie_id){
 		return $this->_call('movies/'.$movie_id.'/clips', '');
 	}
+
+
+     public function getMovieReviews($movie_id){
+         return $this->_call('movies/'.$movie_id.'/reviews', '');
+     }
 	
 	/**
 	 * Get similar movie for a movie.
